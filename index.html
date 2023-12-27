@@ -15,6 +15,14 @@
             socket.emit('chat message', text)
         }
 
+        var receive = (msg)=>{
+            var li = document.createElement("li")
+            li.innerHTML = msg
+            document.getElementById('messages').appendChild(li)
+        }
+
+        socket.on("chat message",receive)
+
     </script>
     <div>
         <ul id="messages"></ul>
