@@ -9,11 +9,17 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io()
+
+        var send = ()=>{
+            var text = document.getElementById("m").value
+            socket.emit('chat message', text)
+        }
+
     </script>
     <div>
         <ul id="messages"></ul>
         <div>
-            <input type="text" id="" /> <button>Send</button>
+            <input type="text" id="m" /> <button onclick="send()">Send</button>
         </div>
     </div>
 </body>
